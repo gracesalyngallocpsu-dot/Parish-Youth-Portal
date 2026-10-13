@@ -1,0 +1,1 @@
+<img src="/images/parishlogo.jpg" alt="{{ config('app.name') }}" {{ $attributes->merge(['class' => 'rounded-lg object-cover']) }}>

@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .hero-gradient {
+        background: linear-gradient(120deg, #5C341F 0%, #7A3F1F 18%, #9E4A26 40%, #C55E31 60%, #DF8A4E 80%, #EFC08A 100%);
+        background-size: 200% 200%;
+        animation: hero-shift 16s ease-in-out infinite;
+    }
+
+    @keyframes hero-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+}
