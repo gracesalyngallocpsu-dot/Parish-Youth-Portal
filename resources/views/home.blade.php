@@ -1,25 +1,23 @@
 <x-public-layout>
-    <section class="hero-gradient relative overflow-hidden">
-        <div class="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-white/15 blur-3xl"></div>
-        <div class="absolute -bottom-32 -left-16 h-96 w-96 rounded-full bg-amber-300/25 blur-3xl"></div>
-        <div class="absolute right-1/3 -top-40 h-80 w-80 rounded-full bg-orange-400/20 blur-3xl mix-blend-screen"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/10"></div>
+    <section class="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-600 to-violet-700">
+        <div class="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-3xl"></div>
+        <div class="absolute -bottom-32 -left-16 h-72 w-72 rounded-full bg-amber-300/20 blur-3xl"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
             <span class="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white ring-1 ring-white/25">
                 Parish Youth Ministry
             </span>
-            <h1 class="mt-5 max-w-3xl text-4xl font-extrabold leading-tight text-white drop-shadow-sm sm:text-5xl">
+            <h1 class="mt-5 max-w-3xl text-4xl font-extrabold leading-tight text-white sm:text-5xl">
                 Growing together in faith, friendship, and service.
             </h1>
-            <p class="mt-5 max-w-2xl text-lg text-amber-50">
+            <p class="mt-5 max-w-2xl text-lg text-indigo-100">
                 Discover upcoming activities, sign up for events, and stay up to date with the latest news from our parish youth community.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
-                <a href="{{ route('activities.index') }}" class="rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#7A3F1F] shadow-lg shadow-[#5C341F]/30 hover:bg-amber-50">
+                <a href="{{ route('activities.index') }}" class="rounded-xl bg-white px-6 py-3 text-sm font-bold text-indigo-700 shadow-sm hover:bg-indigo-50">
                     Browse activities
                 </a>
-                <a href="{{ route('announcements.index') }}" class="rounded-xl bg-white/15 px-6 py-3 text-sm font-bold text-white ring-1 ring-white/30 backdrop-blur hover:bg-white/25">
+                <a href="{{ route('announcements.index') }}" class="rounded-xl bg-indigo-500/40 px-6 py-3 text-sm font-bold text-white ring-1 ring-white/30 hover:bg-indigo-500/60">
                     Read announcements
                 </a>
             </div>
@@ -32,7 +30,7 @@
                 <h2 class="text-2xl font-extrabold text-slate-900 sm:text-3xl">Upcoming activities</h2>
                 <p class="mt-1 text-slate-500">Join us at our next gatherings and events.</p>
             </div>
-            <a href="{{ route('activities.index') }}" class="hidden sm:inline-flex text-sm font-semibold text-parish-700 hover:text-parish-600">View all &rarr;</a>
+            <a href="{{ route('activities.index') }}" class="hidden sm:inline-flex text-sm font-semibold text-indigo-600 hover:text-indigo-500">View all &rarr;</a>
         </div>
 
         @if ($activities->isEmpty())
@@ -55,7 +53,7 @@
                     <h2 class="text-2xl font-extrabold text-slate-900 sm:text-3xl">Latest announcements</h2>
                     <p class="mt-1 text-slate-500">News and updates from the youth ministry.</p>
                 </div>
-                <a href="{{ route('announcements.index') }}" class="hidden sm:inline-flex text-sm font-semibold text-parish-700 hover:text-parish-600">View all &rarr;</a>
+                <a href="{{ route('announcements.index') }}" class="hidden sm:inline-flex text-sm font-semibold text-indigo-600 hover:text-indigo-500">View all &rarr;</a>
             </div>
 
             @if ($announcements->isEmpty())
@@ -66,13 +64,13 @@
                 <div class="mt-8 grid gap-6 md:grid-cols-3">
                     @foreach ($announcements as $announcement)
                         <a href="{{ route('announcements.show', $announcement) }}"
-                           class="flex flex-col rounded-2xl bg-parish-50 p-6 ring-1 ring-parish-100 transition hover:bg-white hover:shadow-md hover:ring-parish-200">
-                            <time class="text-xs font-semibold uppercase tracking-wide text-parish-700">
+                           class="flex flex-col rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 transition hover:bg-white hover:shadow-md hover:ring-indigo-200">
+                            <time class="text-xs font-semibold uppercase tracking-wide text-indigo-600">
                                 {{ ($announcement->published_at ?? $announcement->created_at)->format('M j, Y') }}
                             </time>
                             <h3 class="mt-2 text-lg font-bold text-slate-900">{{ $announcement->title }}</h3>
                             <p class="mt-2 flex-1 text-sm text-slate-600">{{ \Illuminate\Support\Str::limit($announcement->body, 120) }}</p>
-                            <span class="mt-4 text-sm font-semibold text-parish-700">Read more &rarr;</span>
+                            <span class="mt-4 text-sm font-semibold text-indigo-600">Read more &rarr;</span>
                         </a>
                     @endforeach
                 </div>
