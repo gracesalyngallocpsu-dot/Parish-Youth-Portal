@@ -4,7 +4,7 @@
 
 @layer components {
     .hero-gradient {
-        background: linear-gradient(120deg, #5C341F 0%, #7A3F1F 18%, #9E4A26 40%, #C55E31 60%, #DF8A4E 80%, #EFC08A 100%);
+        background: linear-gradient(120deg, #3A2B1D 0%, #5A351E 16%, #7A4620 34%, #A05E28 50%, #C47A32 66%, #DB9346 80%, #E8BC7C 91%, #F7EBD5 100%);
         background-size: 200% 200%;
         animation: hero-shift 16s ease-in-out infinite;
     }
